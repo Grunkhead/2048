@@ -1,19 +1,25 @@
-import pygame
-
-def initConfig():
-
-    size   = width, height = 400, 450
-    screen = pygame.display.set_mode(size)
+import pygame, sys
 
 
 def main():
 
     print("Starting..")
 
-    initConfig()
+    running = True
 
-    # Loop so screen won't disappear.
-    input()
+    screen = pygame.display.set_mode((450, 400))
+    screen.fill((255, 0, 0))
+    
+
+    while running:
+        pygame.display.update()
+
+        for event in pygame.event.get():
+            
+            # Enable to kill the application.
+            if event.type == pygame.QUIT:
+                running = False
+        
 
 # Start the program.
 main()
