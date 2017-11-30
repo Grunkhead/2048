@@ -13,10 +13,6 @@ class Board:
     def set_board_layout(self, boardLayout):
         
         self.boardLayout = boardLayout
-
-
-
-        
         
 
 
