@@ -1,15 +1,18 @@
-from pygame import load
+class Block():
 
-class Block:
+    def __init__(self, value):
+        
+        self.set_value(value)
 
-    image  = None
-    number = None
+    def set_value(self, value):
+        
+        self.value = value
 
-    def __init__(self, number):
-        self.number = number
-
-    def setImage(self, imagePath):
+    def set_image(self, imagePath):
+        
         self.image = load(imagePath)
+        
+
 
     
 
