@@ -5,7 +5,7 @@ class Board():
     
     def __init__(self, boardSize):
         
-        self.generate_board_layout(boardSize) 
+        self.generate_board_layout(boardSize)
 
     # Generate the multidimensional board layout with 2 random Block objects in it.
     def generate_board_layout(self, boardSize):
