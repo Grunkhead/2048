@@ -10,11 +10,12 @@ class Board():
     # Generate the multidimensional board layout with 2 random Block objects in it.
     def generate_board_layout(self, boardSize):
         
-        self.set_board_layout([[
+        self.get_board([[
 
             map(self.generate_random_block(), range(0, 2))
             
             ]*boardSize for i in range(boardSize)])
+
 
     # TODO block generating mechanism.
     def generate_random_block(self):
@@ -22,22 +23,36 @@ class Board():
         row    = randint(0, self.boardSize)
         column = randint(0, self.boardSize)
 
-        block = Block(row, column, value)
+        block = Block(row, column, 2)
 
-        # TODO implementation.
+        self.get_empty_cordinates(self.get_board)
+        self.add_block_to_board(block, self.get_board)
 
-    # TODO check for empty spots in multidimensional array -
-    # so you know where a random block could be placed.
-    def spot_is_empty():
-        
-        # TODO implementation.
+        return block
 
-        return true
+    def add_block_to_board(block, board):
+
+        # TODO implementation of adding a Block object to the board -
+        # using the row and column cordinates in the Block instance.
+
+    # Will fill in the empty spots.
+    def get_empty_cordinates(board):
+
+        empty_cordinates = def checkBoard(board):
+
+            for row in board:
+                for column in row:
+                    if not column:
+                        column = True
+
+            return board
 
     
-    def set_board_layout(self, boardLayout):
-        
-        self.boardLayout = boardLayout
-        
+    # Setters
+    def set_board(self, board):
+        self.board = board
 
+    # Getters
+    def get_board(self):
+        return self.get_board()
 
