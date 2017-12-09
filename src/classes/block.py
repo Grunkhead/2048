@@ -20,13 +20,13 @@ class Block():
         self.image = load(imagePath)
 
     # Getters
-    def get_row():
+    def get_row(self):
         return self.row
 
-    def get_column():
+    def get_column(self):
         return self.column
 
-    def get_value():
+    def get_value(self):
         return self.value        
 
 
