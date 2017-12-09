@@ -46,6 +46,7 @@ class Board():
                         column = True
 
             return board
+        return empty_cordinates
 
     
     # Setters
@@ -54,5 +55,5 @@ class Board():
 
     # Getters
     def get_board(self):
-        return self.get_board()
+        return self.board
 
