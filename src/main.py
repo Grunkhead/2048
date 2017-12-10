@@ -16,13 +16,13 @@ def main():
     screen = pygame.display.set_mode((1080, 1080))
     screen.fill((255, 0, 0))
 
-    displayUI(screen)
+    display_UI(screen)
     board = Board(4)
 
     while running:
         pygame.display.update()
 
-        displayBoard(board)
+        display_board(board)
 
         for event in pygame.event.get():
             
