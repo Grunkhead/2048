@@ -6,6 +6,7 @@ pygame.init()
 headerFont = pygame.font.SysFont(None, 100)
 textFont = pygame.font.SysFont(None, 60)
 orange = (243,145,55)
+blue = (64, 188, 216)
 
 def main():
 
@@ -22,7 +23,7 @@ def main():
     while running:
         pygame.display.update()
 
-        display_board(board)
+        display_board(screen, board)
 
         for event in pygame.event.get():
             
@@ -43,9 +44,22 @@ def display_UI(screen):
 
 
 def display_board(screen, board):
-    container = Surface((1080, 810))
-    container.fill(orane)
-    screen.blit(container, (180, 0))
+    container = pygame.Surface((1080, 810))
+    container.fill(orange)
+    screen.blit(container, (0, 180))
+
+    rectangle = pygame.Surface((250, 180))
+    rectangle.fill(blue)
+    board = board.get_board()
+
+    i = 180
+    for row in board:
+        j = 0
+        for block in row:
+            screen.blit(rectangle, (15 + j, 15 + i))            
+            screen.blit(textFont.render(str(block), True, orange), (15 + j, 15 + i))
+            j = j + 265
+        i = i + 195
 
 
 # def display_score(screen, score):
