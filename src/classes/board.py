@@ -38,15 +38,12 @@ class Board():
     # Will fill in the empty spots.
     def get_empty_cordinates(board):
 
-        empty_cordinates = def checkBoard(board):
+        for row in board:
+            for column in row:
+                if not column:
+                    column = True
 
-            for row in board:
-                for column in row:
-                    if not column:
-                        column = True
-
-            return board
-        return empty_cordinates
+        return board
 
     
     # Setters
