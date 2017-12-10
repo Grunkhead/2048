@@ -1,4 +1,4 @@
-from classes.block import Block
+from block import Block
 from random import randint
 
 class Board():
@@ -7,14 +7,11 @@ class Board():
         self.boardSize = boardSize
         self.generate_board_layout(boardSize)
 
+
     # Generate the multidimensional board layout with 2 random Block objects in it.
     def generate_board_layout(self, boardSize):
-        
-        self.get_board([[
-
-            map(self.generate_random_block(), range(0, 2))
-            
-            ]*boardSize for i in range(boardSize)])
+          
+            return [[Block]*boardSize for i in range(boardSize)]
 
 
     # TODO block generating mechanism.
@@ -54,3 +51,6 @@ class Board():
     def get_board(self):
         return self.board
 
+# Test functionality
+# board = Board(4)
+# print(board.generate_board_layout(4))
