@@ -1,10 +1,10 @@
-from block import Block
+from classes.block import Block
 from random import randint
 
 class Board():
     
     def __init__(self, boardSize):
-        
+        self.boardSize = boardSize
         self.generate_board_layout(boardSize)
 
     # Generate the multidimensional board layout with 2 random Block objects in it.
@@ -25,27 +25,27 @@ class Board():
 
         block = Block(row, column, 2)
 
-        self.get_empty_cordinates(self.get_board)
-        self.add_block_to_board(block, self.get_board)
+        # self.get_empty_cordinates(self.get_board)
+        # self.add_block_to_board(block, self.get_board)
 
         return block
 
-    def add_block_to_board(block, board):
+    # def add_block_to_board(block, board):
 
         # TODO implementation of adding a Block object to the board -
         # using the row and column cordinates in the Block instance.
 
     # Will fill in the empty spots.
-    def get_empty_cordinates(board):
+    # def get_empty_cordinates(board):
 
-        empty_cordinates = def checkBoard(board):
+    #     empty_cordinates = def checkBoard(board):
 
-            for row in board:
-                for column in row:
-                    if not column:
-                        column = True
+    #         for row in board:
+    #             for column in row:
+    #                 if not column:
+    #                     column = True
 
-            return board
+    #         return board
 
     
     # Setters
