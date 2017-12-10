@@ -33,7 +33,7 @@ def main():
     sys.exit()
 
 
-def displayUI(screen):
+def display_UI(screen):
     title = headerFont.render("2048", True, orange)
     score = textFont.render("Score", True, orange)
     highscore = textFont.render("Highscore", True, orange)
@@ -42,17 +42,17 @@ def displayUI(screen):
     screen.blit(highscore, (800, 55))
 
 
-def displayBoard(screen, board):
+def display_board(screen, board):
     container = Surface((1080, 810))
     container.fill(orane)
     screen.blit(container, (180, 0))
 
 
-# def displayScore(screen, score):
+# def display_score(screen, score):
 
 
 
-# def displayHighscore(screen, score):
+# def display_highscore(screen, score):
 
 
 # Start the program.
