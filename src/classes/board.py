@@ -1,11 +1,10 @@
-from block import Block
+from classes.block import Block # Windows classes.block | Linux block
 from random import randint
 
 class Board():
     
     def __init__(self, boardSize):
-        self.boardSize = boardSize
-        self.generate_board_layout(boardSize)
+        self.set_board(self.generate_board_layout(boardSize))
 
 
     # Generate the multidimensional board layout with 2 random Block objects in it.
