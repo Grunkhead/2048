@@ -1,25 +1,53 @@
-from classes.block import Block # Windows classes.block | Linux block
+from classes.block import Block
 from random import randint
 
 class Board():
     
     def __init__(self, boardSize):
         self.set_board(self.generate_board_layout(boardSize))
+        self.generate_random_block(self.board)
 
 
     # Generate the multidimensional board layout with 2 random Block objects in it.
     def generate_board_layout(self, boardSize):
           
-            return [[Block]*boardSize for i in range(boardSize)]
+            return [[None]*boardSize for i in range(boardSize)]
 
+    def add_numbers_to_eachother(row, slideTowards):
+
+        iterator = len(row) - 1
+        nextNum  = 0
+
+        while iterator > 0:
+            
+            currNum = list[iterator]
+            nextNum = list[iterator - 1]
+                
+            if nextNum == currNum:
+                list[iterator] = nextNum + currNum
+                del list[iterator - 1]
+                list.insert(0, 0)
+
+            iterator -= 1
+
+        return row
+        
 
     # TODO block generating mechanism.
-    def generate_random_block(self):
-        
-        row    = randint(0, self.boardSize)
-        column = randint(0, self.boardSize)
+    def generate_random_block(self, board):
 
+        # Generate cordinates.        
+        row    = randint(0, 3)
+        column = randint(0, 3)
+
+        # Set 2 as default value.
         block = Block(row, column, 2)
+        
+        row = board[block.get_row()]
+        row[block.get_column()] = block
+
+        print(self.board)
+
 
         # self.get_empty_cordinates(self.get_board)
         # self.add_block_to_board(block, self.get_board)
@@ -32,14 +60,14 @@ class Board():
         # using the row and column cordinates in the Block instance.
 
     # Will fill in the empty spots.
-    def get_empty_cordinates(board):
+    def get_empty_cordinates(self):
 
-        for row in board:
+        for row in self.board:
             for column in row:
-                if not column:
-                    column = True
+                if column:
+                    column = 0
 
-        return board
+        return self.board
 
     
     # Setters

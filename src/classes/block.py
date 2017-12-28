@@ -1,7 +1,6 @@
 class Block():
 
     def __init__(self, row, column, value):
-        
         self.set_row(row)
         self.set_column(column)
         self.set_value(value)
@@ -27,7 +26,7 @@ class Block():
         return self.column
 
     def get_value(self):
-        return self.value        
+        return self.value
 
 
     

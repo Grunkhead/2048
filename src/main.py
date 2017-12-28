@@ -53,11 +53,15 @@ def display_board(screen, board):
     board = board.get_board()
 
     i = 180
+
     for row in board:
         j = 0
         for block in row:
-            screen.blit(rectangle, (15 + j, 15 + i))            
-            screen.blit(textFont.render(str(block), True, orange), (15 + j, 15 + i))
+            screen.blit(rectangle, (15 + j, 15 + i))
+
+            if block:
+                screen.blit(textFont.render(str(block.get_value()), True, orange), (15 + j, 15 + i))
+
             j = j + 265
         i = i + 195
 
