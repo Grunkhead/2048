@@ -4,8 +4,14 @@ from random import randint
 class Board():
     
     def __init__(self, boardSize):
+
+        # Minus 1 because of counting from zero.
+        self.boardSize = boardSize - 1
+
         self.set_board(self.generate_board_layout(boardSize))
-        self.generate_random_block(self.board)
+
+        # Generate random first pair of random blocks.
+        [self.generate_random_block(self.board, self.boardSize) for x in range(2)]
 
 
     # Generate the multidimensional board layout with 2 random Block objects in it.
@@ -34,11 +40,11 @@ class Board():
         
 
     # TODO block generating mechanism.
-    def generate_random_block(self, board):
+    def generate_random_block(self, board, boardSize):
 
         # Generate cordinates.        
-        row    = randint(0, 3)
-        column = randint(0, 3)
+        row    = randint(0, boardSize)
+        column = randint(0, boardSize)
 
         # Set 2 as default value.
         block = Block(row, column, 2)
