@@ -50,31 +50,23 @@ class Board():
         block = Block(row, column, 2)
         
         row = board[block.get_row()]
-        row[block.get_column()] = block
 
-        print(self.board)
+        colValue = row[block.get_column()]
 
+        # If spot is empty, spawn generated Block object.
+        if colValue == None:
+            row[block.get_column()] = block
+            return True
 
-        # self.get_empty_cordinates(self.get_board)
-        # self.add_block_to_board(block, self.get_board)
-
-        return block
+        # If not empty, retry combination.
+        # TODO this could be more efficient.
+        self.generate_random_block(board, boardSize)
+        return False
 
     # def add_block_to_board(block, board):
 
         # TODO implementation of adding a Block object to the board -
         # using the row and column cordinates in the Block instance.
-
-    # Will fill in the empty spots.
-    def get_empty_cordinates(self):
-
-        for row in self.board:
-            for column in row:
-                if column:
-                    column = 0
-
-        return self.board
-
     
     # Setters
     def set_board(self, board):
@@ -83,7 +75,3 @@ class Board():
     # Getters
     def get_board(self):
         return self.board
-
-# Test functionality
-# board = Board(4)
-# print(board.generate_board_layout(4))
